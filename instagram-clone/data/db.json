@@ -27,10 +27,20 @@
       "username": "user1",
       "password": "123",
       "name": "Usuário 1",
-      "posts": "312",
+      "posts": "213",
       "followers": "431",
       "following": "231",
       "description": "Username description"
+    },
+    {
+      "id": 2,
+      "username": "user2",
+      "password": "1323",
+      "name": "Usuário 2",
+      "posts": "12",
+      "followers": "231",
+      "following": "291",
+      "description": "Username description beta"
     }
   ]
 }

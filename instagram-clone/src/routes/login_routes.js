@@ -7,6 +7,7 @@ import AuthContext from "./auth_context";
 import HomeScreenRouters from "./home_screen_routes";
 import { doLogin } from "../services/requests/users";
 import { Alert } from "react-native";
+import EditarPerfil from "../pages/editProfile";
 
 const Stack = createStackNavigator();
 
@@ -53,11 +54,14 @@ export default function LoginRouters() {
                 {isSignedIn ? (
                     <>
                         <Stack.Screen name="home_screen_routers" component={HomeScreenRouters} />
+                        <Stack.Screen name="tela_editar_perfil" component={EditarPerfil} />
+                        
                     </>
                 ) : (
                     <>
                         <Stack.Screen name="auth" component={Auth} />
                         <Stack.Screen name="login" component={LoginState} />
+
                     </>
                 )}
             </Stack.Navigator>
