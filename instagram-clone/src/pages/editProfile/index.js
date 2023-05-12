@@ -1,14 +1,17 @@
 import { View, StyleSheet, Text, Image, TouchableOpacity } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
-import { LabelHTMLAttributes } from "react";
 import imagem from '../../../assets/stories/caetano.jpg'
+import { useContext, useState } from "react";
+import { useNavigation } from "@react-navigation/native";
 
 export default function EditarPerfil() {
+
+    const navigator = useNavigation()
     return (
         <View style={styles.container}>
 
             <View style={styles.menuSuperior}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => {navigator.goBack()}}>
                     <Text style={{ marginLeft: 5, marginTop: 5, fontSize: 18 }}>Cancelar</Text>
                 </TouchableOpacity>
 
@@ -30,22 +33,22 @@ export default function EditarPerfil() {
 
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginBottom: '5%' }}>
                     <Text style={styles.textoLabel}>Nome </Text>
-                    <TextInput style={styles.input} placeholder={""} />
+                    <TextInput style={styles.input} value='Caetano' />
                 </View>
 
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginBottom: '5%' }}>
                     <Text style={styles.textoLabel}>Username </Text>
-                    <TextInput style={styles.input} placeholder={""} />
+                    <TextInput style={styles.input} value="Caetanovns"/>
                 </View>
 
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginBottom: '5%' }}>
                     <Text style={styles.textoLabel}>Email </Text>
-                    <TextInput style={styles.input} placeholder={""} />
+                    <TextInput style={styles.input} value="caetano@gmail.com" />
                 </View>
 
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginBottom: '5%' }}>
                     <Text style={styles.textoLabel}>Bio </Text>
-                    <TextInput style={styles.input} placeholder={""} />
+                    <TextInput style={styles.input} value="Professor da UNIFAP" />
                 </View>
             </View>
         </View>
@@ -76,23 +79,16 @@ const styles = StyleSheet.create({
         color: '#3897F0',
         fontSize: 16
     },
-    containerInputs: {
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginTop: '30%',
+    containerInputs:{
+        marginTop: 30
     },
-    input: {
-        width: '70%',
-        borderWidth: 0.3,
-        borderTopWidth: 0,
-        borderLeftWidth: 0,
-        borderRightWidth: 0,
-        marginLeft: '5%',
+    textoLabel:{
+        paddingLeft: 10,
+        fontSize: 17
     },
-    textoLabel: {
-        fontSize: 17, 
-        justifyContent: 'space-between', 
-        textAlign: 'left', 
-        alignItems: 'flex-start'
+    input:{
+        width: '50%',
+        borderBottomWidth: 0.3,
+        marginRight: '10%'
     }
 })
